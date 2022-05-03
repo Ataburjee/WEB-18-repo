@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="increase()">increase</button>
+    <button onclick="decrease()">decrease</button>
+    <h1>show count here</h1>
+</body>
+</html>
+<script>
+    var count = localStorage.getItem("counter") ;
+    function increase(){
+        count++
+        localStorage.setItem("counter",count)
+        document.querySelector("h1").innerText=count
+    }
+    
+    function decrease(){
+        count--
+        localStorage.setItem("counter",count)
+        document.querySelector("h1").innerText=count
+    }
+</script>
