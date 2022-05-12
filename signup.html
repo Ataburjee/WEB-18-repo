@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #masai{
+            font-size: 60px;
+            text-align: center;
+            font-weight: 550;
+        }
+        #signup{
+            text-align: center;
+            padding-top: 20px;
+        }
+        #container{
+            height: 500px;
+            width: 400px;
+            margin: auto;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+
+        #form>input{
+            height: 40px;
+            width: 400px;
+           border-radius: 7px;
+        }
+        #cred{
+            font-weight: 800;
+            background-color: rgb(151, 151, 141);
+            border: 0ch;
+            margin-top: 50px;
+            border-radius: 7px;
+        }
+        #signin{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #cred:hover{
+            color: white;
+            background-color: black;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="masai">masai</div>
+    <div id="container">
+        
+        <h2 id="signup">Sign Up</h2>
+        <form action="" id="form">
+            <p>Full name</p>
+            <input id="name" type="text" placeholder="Enter your full name">
+            <p>Email</p>
+            <input id="email" type="text" placeholder="Enter email">
+            <p>Password</p>
+            <input id="password" type="text" placeholder="Enter password">
+          
+            <input id="cred" type="submit" value="SIGN UP">
+        </form>
+        <div id="signin">
+            <p>Already have an account?</p>
+            <h3><a href="login.html">sign in</a></h3>
+        </div>
+    </div>
+   
+</body>
+</html>
+
+
+<script>
+    
+var signupArr = JSON.parse(localStorage.getItem("saveSignup")) || [] ;
+document.querySelector("form").addEventListener("submit",myFunction)
+    function myFunction(elem){
+    var signupObj = {
+        input_name : form.name.value ,
+        input_email : form.email.value ,
+        input_pass : form.password.value ,
+    }
+    signupArr.push(signupObj)
+    // console.log(signupArr)
+    alert("SignUp succesful")
+    localStorage.setItem("saveSignup",JSON.stringify(signupArr))
+}
+</script>
